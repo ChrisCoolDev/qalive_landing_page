@@ -1,22 +1,67 @@
+---
+import "../styles/global.css";
+import { Astro } from 'astro';
+const siteUrl = 'https://yourdomain.com';  // Replace with your real domain
+const pageTitle = 'QALive - Engage Your Audience with Live Q&A Sessions';
+const pageDescription = 'QALive enables real-time audience engagement with live question & answer sessions for events, webinars, workshops, and meetings. Simple setup with QR codes for instant participation.';
+const pageKeywords = 'live Q&A, audience engagement, event Q&A, interactive sessions, webinars, workshops, conferences, QR code question submission';
+const pageImage = `${siteUrl}/images/og-image.png`; // Create a good preview image in your public folder
+
+// Welcome to Astro! Wondering what to do next? Check out the Astro documentation at https://docs.astro.build
+// Don't want to use any of this? Delete everything in this file, the `assets`, `components`, and `layouts` directories, and start fresh.
+---
+
 <!doctype html>
 <html lang="en">
 	<head>
+		<title>{pageTitle}</title>
 		<meta charset="UTF-8" />
-		<meta name="viewport" content="width=device-width" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<meta name="generator" content={Astro.generator} />
-		<title>Astro Basics</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<meta name="description" content={pageDescription} />
+		<meta name="keywords" content={pageKeywords} />
+		<meta name="author" content="Christian Ludovic Talekeufouet" />
+		<link rel="canonical" href={siteUrl} />
+
+		<!-- Open Graph / Facebook -->
+		<meta property="og:type" content="website" />
+		<meta property="og:url" content={siteUrl} />
+		<meta property="og:title" content={pageTitle} />
+		<meta property="og:description" content={pageDescription} />
+		<meta property="og:image" content={pageImage} />
+
+		<!-- Twitter -->
+		<meta property="twitter:card" content="summary_large_image" />
+		<meta property="twitter:url" content={siteUrl} />
+		<meta property="twitter:title" content={pageTitle} />
+		<meta property="twitter:description" content={pageDescription} />
+		<meta property="twitter:image" content={pageImage} />
+
+		<!-- Favicon -->
+		<link rel="icon" href="/images/logo.svg" />
+
+		<!-- Schema.org structured data -->
+		<script type="application/ld+json" is:inline>
+		{
+			"@context": "https://schema.org",
+			"@type": "WebSite",
+			"url": "{siteUrl}",
+			"name": "QALive",
+			"description": "{pageDescription}",
+			"publisher": {
+			"@type": "Personal",
+			"name": "Christian Ludovic Talekeufouet",
+			"logo": {
+				"@type": "ImageObject",
+				"url": "{siteUrl}/images/logo.png"
+			}
+			}
+		}
+		</script>
 	</head>
-	<body>
-		<slot />
+	<body class="font-nunito px-4">
+		<div class="max-w-[1280px] w-full mx-auto">
+			<slot />
+		</div>
 	</body>
 </html>
 
-<style>
-	html,
-	body {
-		margin: 0;
-		width: 100%;
-		height: 100%;
-	}
-</style>
