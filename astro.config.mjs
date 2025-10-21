@@ -1,9 +1,11 @@
 // @ts-check
 import { defineConfig } from 'astro/config';
-
+import sitemap from '@astrojs/sitemap';
 // https://astro.build/config
 export default defineConfig({
-    server: {
+    /*server: {
         host: true, // ou '0.0.0.0'
-    },
+    },*/
+    site: 'https://qalive.ink',
+    integrations: [sitemap()],
 });
