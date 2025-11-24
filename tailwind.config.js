@@ -7,7 +7,12 @@ export default {
     extend: {
       fontFamily: {
         anton : ['anton', 'sans-serif'],
-        nunito : ['nunito', 'sans-serif']
+        nunito : ['nunito', 'sans-serif'],
+        mabryLight: ['mabryLight'],
+        mabry: ['mabry'],
+        mabryMedium: ['mabryMedium'],
+        mabryBold: ['mabryBold'],
+        mabryBlack: ['mabryBlack'],
       }
     },
   },

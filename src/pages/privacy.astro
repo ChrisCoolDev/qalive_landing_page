@@ -1,0 +1,185 @@
+---
+import Layout from '../layouts/Layout.astro';
+import "../styles/global.css";
+---
+<Layout>
+<body class="font-sans antialiased bg-white text-black">
+    <div class="min-h-screen">
+        <header class="">
+            <div class="mx-auto max-w-[900px] px-8">
+                <div class="flex h-[52px] items-center justify-between">
+                    <a class="flex items-center gap-1 tracking-tight" href="/">
+                        <div class="flex h-5 w-6 items-center justify-center rounded bg-[#E85D4A] text-[11px] font-medium text-white">QA</div>
+                        <span class="text-sm font-medium">QAlive</span>
+                    </a>
+                    <div class="flex items-center gap-4">
+                        <a href="https://app.qalive.ink">
+                            <button class="h-7 w-12 sm:w-16 rounded bg-[#E85D4A] text-[12px] text-white hover:bg-[#E85D4A]/90 transition-colors">Login</button>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </header>
+
+        <main class="py-16 md:py-20 px-8">
+            <div class="mx-auto max-w-[700px] w-full ">
+                <div class="mb-8">
+                    <a href="/" class="inline-flex items-center gap-1.5 text-[13px] text-[#555] hover:text-[#E85D4A] transition-colors mb-6">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="m15 18-6-6 6-6"></path>
+                        </svg>
+                        Back to home
+                    </a>
+                    <h1 class="text-[28px] font-medium tracking-[-0.6px] text-[#0A0A0A] mb-2">Privacy Policy</h1>
+                    <p class="text-[14px] text-[#555]">Last updated: November 24, 2025</p>
+                </div>
+
+                <div class="prose prose-sm max-w-none">
+                    <div class="space-y-8">
+                        <section>
+                            <h2 class="text-[18px] font-medium text-[#0A0A0A] mb-3">Introduction</h2>
+                            <p class="text-[14px] leading-[22px] text-[#555] mb-3">
+                                QAlive ("we", "our", or "us") is committed to protecting your privacy. This Privacy Policy explains how we collect, use, and safeguard your information when you use our interactive Q&A platform at app.qalive.ink.
+                            </p>
+                        </section>
+
+                        <section>
+                            <h2 class="text-[18px] font-medium text-[#0A0A0A] mb-3">Information We Collect</h2>
+                            <h3 class="text-[16px] font-medium text-[#0A0A0A] mb-2 mt-4">For Event Organizers</h3>
+                            <p class="text-[14px] leading-[22px] text-[#555] mb-2">When you create an account to host Q&A sessions, we collect:</p>
+                            <ul class="list-disc pl-6 text-[14px] leading-[22px] text-[#555] space-y-1">
+                                <li>Email address and name</li>
+                                <li>Session information (title, description, settings)</li>
+                                <li>Questions submitted by attendees</li>
+                                <li>Usage data and analytics</li>
+                            </ul>
+
+                            <h3 class="text-[16px] font-medium text-[#0A0A0A] mb-2 mt-4">For Attendees</h3>
+                            <p class="text-[14px] leading-[22px] text-[#555] mb-2">When you submit questions as an attendee:</p>
+                            <ul class="list-disc pl-6 text-[14px] leading-[22px] text-[#555] space-y-1">
+                                <li>No account creation is required</li>
+                                <li>We collect only the questions you submit</li>
+                                <li>Optional: Name or identifier if you choose to provide it</li>
+                                <li>Basic technical information (IP address, browser type) for security purposes</li>
+                            </ul>
+                        </section>
+
+                        <section>
+                            <h2 class="text-[18px] font-medium text-[#0A0A0A] mb-3">How We Use Your Information</h2>
+                            <p class="text-[14px] leading-[22px] text-[#555] mb-2">We use the collected information to:</p>
+                            <ul class="list-disc pl-6 text-[14px] leading-[22px] text-[#555] space-y-1">
+                                <li>Provide and maintain the QAlive service</li>
+                                <li>Enable real-time Q&A functionality</li>
+                                <li>Improve and optimize our platform</li>
+                                <li>Send important service updates and notifications</li>
+                                <li>Ensure security and prevent abuse</li>
+                            </ul>
+                        </section>
+
+                        <section>
+                            <h2 class="text-[18px] font-medium text-[#0A0A0A] mb-3">Data Storage and Security</h2>
+                            <p class="text-[14px] leading-[22px] text-[#555] mb-3">
+                                We implement appropriate security measures to protect your personal information. All data is stored securely and transmitted using encryption. Session data is retained for the duration necessary to provide the service and can be deleted by the organizer at any time.
+                            </p>
+                        </section>
+
+                        <section>
+                            <h2 class="text-[18px] font-medium text-[#0A0A0A] mb-3">Data Sharing</h2>
+                            <p class="text-[14px] leading-[22px] text-[#555] mb-3">
+                                We do not sell, trade, or rent your personal information to third parties. Questions submitted during Q&A sessions are visible to the session organizer and, at the organizer's discretion, may be displayed publicly during the event. We may share data with trusted service providers who help us operate our platform, under strict confidentiality agreements.
+                            </p>
+                        </section>
+
+                        <section>
+                            <h2 class="text-[18px] font-medium text-[#0A0A0A] mb-3">Your Rights</h2>
+                            <p class="text-[14px] leading-[22px] text-[#555] mb-2">You have the right to:</p>
+                            <ul class="list-disc pl-6 text-[14px] leading-[22px] text-[#555] space-y-1">
+                                <li>Access your personal data</li>
+                                <li>Request correction of inaccurate data</li>
+                                <li>Request deletion of your data</li>
+                                <li>Opt-out of marketing communications</li>
+                                <li>Export your data</li>
+                            </ul>
+                        </section>
+
+                        <section>
+                            <h2 class="text-[18px] font-medium text-[#0A0A0A] mb-3">Cookies and Tracking</h2>
+                            <p class="text-[14px] leading-[22px] text-[#555] mb-3">
+                                We use essential cookies to maintain your session and provide basic functionality. We do not use third-party advertising cookies. You can control cookie preferences through your browser settings.
+                            </p>
+                        </section>
+
+                        <section>
+                            <h2 class="text-[18px] font-medium text-[#0A0A0A] mb-3">Changes to This Policy</h2>
+                            <p class="text-[14px] leading-[22px] text-[#555] mb-3">
+                                We may update this Privacy Policy from time to time. We will notify you of significant changes by posting the new policy on this page and updating the "Last updated" date. Continued use of QAlive after changes constitutes acceptance of the updated policy.
+                            </p>
+                        </section>
+
+                        <section>
+                            <h2 class="text-[18px] font-medium text-[#0A0A0A] mb-3">Contact Us</h2>
+                            <p class="text-[14px] leading-[22px] text-[#555] mb-3">
+                                If you have questions about this Privacy Policy or your data, please contact us at:
+                            </p>
+                            <p class="text-[14px] leading-[22px] text-[#555]">
+                                Email: <a href="mailto:talchrist10@gmail.com" class="text-[#E85D4A] hover:underline">talchrist10@gmail.com</a>
+                            </p>
+                        </section>
+                    </div>
+                </div>
+            </div>
+        </main>
+
+        <footer class="bg-[#FBFBFA] relative">
+            
+            <div class="flex justify-center">
+                <div class="w-[200px] border-t border-[#E6E6E6]"></div>
+            </div>
+            <div class="py-12">
+                <div class="mx-auto max-w-[950px] px-8">
+                    <div class="mb-8 flex flex-col gap-8 md:gap-12 lg:flex-row lg:justify-between">
+                        <div class="flex items-start justify-between w-full">
+                            <div>
+                                <a class="flex items-center gap-1 tracking-tight" href="/">
+                        <div class="flex h-5 w-6 items-center justify-center rounded bg-[#E85D4A] text-[11px] font-medium text-white">QA</div>
+                        <span class="text-sm font-medium">QAlive</span>
+                    </a>
+                                <p class="text-[12px] text-[#555] tracking-tight max-w-[280px] leading-relaxed">Interactive Q&A for every event. Engage your audience in real-time.</p>
+                                <div class="mt-3">
+                                    <a href="mailto:talchrist10@gmail.com" class="text-[11px] text-[#555] tracking-tight hover:text-[#0A0A0A] transition-colors underline decoration-1 underline-offset-2">Contact the creator</a>
+                                </div>
+                            </div>
+                            <div class="flex items-start space-x-16">
+                                <div class="flex flex-col gap-2">
+                                    <p class="text-[13px] font-medium text-[#0A0A0A] mb-1">Product</p>
+                                    <a class="text-[13px] text-[#555] tracking-tight hover:text-[#0A0A0A] transition-colors whitespace-nowrap" href="#pricing">Pricing</a>
+                                    <a class="text-[13px] text-[#555] tracking-tight hover:text-[#0A0A0A] transition-colors whitespace-nowrap" href="#features">Features</a>
+                                    <a target="_blank" rel="noopener noreferrer" class="text-[13px] text-[#555] tracking-tight hover:text-[#0A0A0A] transition-colors whitespace-nowrap" href="https://app.qalive.ink">Live demo</a>
+                                </div>
+                                <div class="flex flex-col gap-2">
+                                    <p class="text-[13px] font-medium text-[#0A0A0A] mb-1">Legal</p>
+                                    <a class="text-[13px] text-[#555] tracking-tight hover:text-[#0A0A0A] transition-colors" href="/privacy">Privacy</a>
+                                    <a class="text-[13px] text-[#555] tracking-tight hover:text-[#0A0A0A] transition-colors" href="/terms">Terms</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="border-t border-[#E6E6E6] pt-6 flex flex-col md:flex-row md:items-center md:justify-between gap-4">
+                        <p class="text-[11px] text-[#737373] tracking-tight">© 2025 QAlive. Built with ❤️ for better events.</p>
+                        <div class="flex items-center gap-4">
+                            <a target="_blank" rel="noopener noreferrer" class="text-[#555] hover:text-[#0A0A0A] transition-colors" aria-label="Follow us on X" href="https://x.com/qalive">
+                                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" class="fill-current">
+                                    <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"></path>
+                                </svg>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="mt-8">
+                        <p class="text-[11px] leading-relaxed text-[#737373] opacity-60 tracking-tight max-w-[720px] mx-auto text-center">QAlive is an independent project built to make event Q&A sessions more interactive and accessible. All features are provided as-is. We continuously improve based on user feedback.</p>
+                    </div>
+                </div>
+            </div>
+        </footer>
+    </div>
+</body>
+</Layout>

@@ -1,88 +1,71 @@
 ---
 import "../styles/global.css";
-const siteUrl = 'https://qalive.ink';  // Replace with your real domain
+
+// Détection automatique de l'URL (production ou dev)
+const siteUrl = import.meta.env.SITE || 'https://qalive.ink';
+const currentUrl = Astro.url.href;
+
 const pageTitle = 'QALive - Engage Your Audience with Live Q&A Sessions';
 const pageDescription = 'QALive enables real-time audience engagement with live question & answer sessions for events, webinars, workshops, and meetings. Simple setup with QR codes for instant participation.';
 const pageKeywords = 'live Q&A, audience engagement, event Q&A, interactive sessions, webinars, workshops, conferences, QR code question submission';
-const pageImage = `${siteUrl}/images/og-image.png`; // Create a good preview image in your public folder
-
-// Welcome to Astro! Wondering what to do next? Check out the Astro documentation at https://docs.astro.build
-// Don't want to use any of this? Delete everything in this file, the `assets`, `components`, and `layouts` directories, and start fresh.
+const pageImage = `${siteUrl}/images/og-image.png`; 
 ---
 
 <!doctype html>
 <html lang="en">
-	<head>
-		<title>{pageTitle}</title>
-		<meta charset="UTF-8" />
-		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-		<meta name="description" content={pageDescription} />
-		<meta name="keywords" content={pageKeywords} />
-		<meta name="author" content="Christian Ludovic Talekeufouet" />
-		<link rel="canonical" href={siteUrl} />
+    <head>
+        <title>{pageTitle}</title>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta name="description" content={pageDescription} />
+        <meta name="keywords" content={pageKeywords} />
+        <meta name="author" content="Christian Ludovic Talekeufouet" />
+        <link rel="canonical" href={siteUrl} />
 
-		<!-- Open Graph / Facebook -->
-		<meta property="og:type" content="website" />
-		<meta property="og:url" content={siteUrl} />
-		<meta property="og:title" content={pageTitle} />
-		<meta property="og:description" content={pageDescription} />
-		<meta property="og:image" content={pageImage} />
+        <!-- Open Graph / Facebook -->
+        <meta property="og:type" content="website" />
+        <meta property="og:url" content={siteUrl} />
+        <meta property="og:title" content={pageTitle} />
+        <meta property="og:description" content={pageDescription} />
+        <meta property="og:image" content={pageImage} />
 
-		<!-- Twitter -->
-		<meta property="twitter:card" content="summary_large_image" />
-		<meta property="twitter:url" content={siteUrl} />
-		<meta property="twitter:title" content={pageTitle} />
-		<meta property="twitter:description" content={pageDescription} />
-		<meta property="twitter:image" content={pageImage} />
+        <!-- Twitter -->
+        <meta property="twitter:card" content="summary_large_image" />
+        <meta property="twitter:url" content={siteUrl} />
+        <meta property="twitter:title" content={pageTitle} />
+        <meta property="twitter:description" content={pageDescription} />
+        <meta property="twitter:image" content={pageImage} />
 
-		<!-- Favicon -->
-		<link rel="icon" href="/images/logo.svg" />
+        <!-- Favicon -->
+        <link rel="icon" href="/images/logo.svg" />
 
-		<!-- Privacy-friendly analytics by Plausible -->
-		<script async src="https://plausible.io/js/pa-8kQzrLfQBEL26SjfGr8jG.js"></script>
-		<script>
-		window.plausible=window.plausible||function(){(plausible.q=plausible.q||[]).push(arguments)},plausible.init=plausible.init||function(i){plausible.o=i||{}};
-		plausible.init()
-		</script>
-		<!-- Schema.org structured data -->
-		<script type="application/ld+json" is:inline>
-		{
-			"@context": "https://schema.org",
-			"@type": "WebSite",
-			"url": "{siteUrl}",
-			"name": "QALive",
-			"description": "{pageDescription}",
-			"publisher": {
-			"@type": "Personal",
-			"name": "Christian Ludovic Talekeufouet",
-			"logo": {
-				"@type": "ImageObject",
-				"url": "{siteUrl}/images/logo.png"
-			}
-			}
-		}
-		</script>
-	</head>
-	<body class="font-nunito px-4">
-		<div class="max-w-[1280px] w-full mx-auto">
-			<slot />
-		</div>
-	</body>
-	<footer class="font-nunito px-4">
-		<div class="max-w-[1280px] w-full mx-auto ">
-			<div class="mt-[56px] md:mt-[90px] mb-[16px] md:mb-[20px] px-3">
-				<p class="font-anton text-[40px] md:text-[100px] leading-[44px] md:leading-[110px] pb-3 md:pb-5 border-b border-b-gray-400 w-full mb-3 md:mb-4">
-				QALive
-				</p>
-				<div class="flex items-center justify-between">
-					<span class="text-[12px] md:text-[14px]">(c) 2025 qalive, all right reserved.</span>
-					<ul class="text-[12px] md:text-[14px] flex items-center space-x-3 md:space-x-6">
-						<li><a href="">Privacy</a></li>
-						<li><a href="">Terms of use</a></li>
-					</ul>
-				</div>
-			</div>
-		</div>
-	</footer>
+        <!-- Privacy-friendly analytics by Plausible -->
+        <script async src="https://plausible.io/js/pa-8kQzrLfQBEL26SjfGr8jG.js"></script>
+        <script>
+        window.plausible=window.plausible||function(){(plausible.q=plausible.q||[]).push(arguments)},plausible.init=plausible.init||function(i){plausible.o=i||{}};
+        plausible.init()
+        </script>
+        
+        <!-- Schema.org structured data -->
+        <script type="application/ld+json" set:html={JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "WebSite",
+            "url": siteUrl,
+            "name": "QALive",
+            "description": pageDescription,
+            "publisher": {
+                "@type": "Organization",
+                "name": "Christian Ludovic Talekeufouet",
+                "logo": {
+                    "@type": "ImageObject",
+                    "url": `${siteUrl}/images/logo.png`
+                }
+            }
+        })} />
+    </head>
+    <body class="font-mabry">
+        <div class="font-mabry">
+            <slot />
+        </div>
+    </body>
 </html>
-
