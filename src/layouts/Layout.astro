@@ -1,61 +1,86 @@
 ---
 import "../styles/global.css";
 
-// Détection automatique de l'URL (production ou dev)
+// Détection automatique de l'URL
 const siteUrl = import.meta.env.SITE || 'https://qalive.ink';
 const currentUrl = Astro.url.href;
 
-const pageTitle = 'QALive - Engage Your Audience with Live Q&A Sessions';
-const pageDescription = 'QALive enables real-time audience engagement with live question & answer sessions for events, webinars, workshops, and meetings. Simple setup with QR codes for instant participation.';
-const pageKeywords = 'live Q&A, audience engagement, event Q&A, interactive sessions, webinars, workshops, conferences, QR code question submission';
+// SEO : Titre optimisé pour l'intention de recherche (Keyword + Value Prop)
+const pageTitle = 'QAlive - Free Live Q&A Platform for Events & Webinars | No Login Required';
+
+// SEO : Description orientée "Action" et "Solution" (Max 160 caractères pour éviter la coupure)
+const pageDescription = ' The simplest free live Q&A tool for conferences, workshops, and town halls. Engage your audience instantly via QR code. Anonymous questions, moderation tools, and no signup needed.';
+
+// SEO : Mots-clés (Google les ignore un peu, mais utile pour Bing/Yandex)
+const pageKeywords = 'live Q&A, audience engagement tool, free slido alternative, interactive presentation software, anonymous questions, event q&a, webinar tools, qalive';
+
 const pageImage = `${siteUrl}/images/og-image.png`; 
 ---
 
 <!doctype html>
 <html lang="en">
     <head>
-        <title>{pageTitle}</title>
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        
+        <title>{pageTitle}</title>
         <meta name="description" content={pageDescription} />
         <meta name="keywords" content={pageKeywords} />
         <meta name="author" content="Christian Ludovic Talekeufouet" />
+        <meta name="robots" content="index, follow" />
         <link rel="canonical" href={siteUrl} />
+        <link rel="sitemap" href="/sitemap-index.xml" />
 
-        <!-- Open Graph / Facebook -->
         <meta property="og:type" content="website" />
         <meta property="og:url" content={siteUrl} />
         <meta property="og:title" content={pageTitle} />
         <meta property="og:description" content={pageDescription} />
         <meta property="og:image" content={pageImage} />
+        <meta property="og:image:alt" content="QAlive Dashboard Preview" />
+        <meta property="og:site_name" content="QAlive" />
 
-        <!-- Twitter -->
         <meta property="twitter:card" content="summary_large_image" />
         <meta property="twitter:url" content={siteUrl} />
         <meta property="twitter:title" content={pageTitle} />
         <meta property="twitter:description" content={pageDescription} />
         <meta property="twitter:image" content={pageImage} />
+        <meta name="twitter:creator" content="@qalive" /> 
 
-        <!-- Favicon -->
-        <link rel="icon" href="/images/logo.svg" />
+        <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+        <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
 
-        <!-- Privacy-friendly analytics by Plausible -->
         <script async src="https://plausible.io/js/pa-8kQzrLfQBEL26SjfGr8jG.js"></script>
         <script>
         window.plausible=window.plausible||function(){(plausible.q=plausible.q||[]).push(arguments)},plausible.init=plausible.init||function(i){plausible.o=i||{}};
         plausible.init()
         </script>
         
-        <!-- Schema.org structured data -->
         <script type="application/ld+json" set:html={JSON.stringify({
             "@context": "https://schema.org",
-            "@type": "WebSite",
-            "url": siteUrl,
-            "name": "QALive",
+            "@type": "SoftwareApplication",
+            "name": "QAlive",
+            "headline": "Interactive Live Q&A Platform",
             "description": pageDescription,
+            "applicationCategory": "BusinessApplication",
+            "operatingSystem": "Web, iOS, Android",
+            "url": siteUrl,
+            "image": pageImage,
+            "offers": {
+                "@type": "Offer",
+                "price": "0",
+                "priceCurrency": "USD",
+                "availability": "https://schema.org/InStock"
+            },
+            "featureList": "Live Q&A, QR Code Generation, Moderation Dashboard, Anonymous Submissions",
+            "screenshot": pageImage,
+            "author": {
+                "@type": "Person",
+                "name": "Christian Ludovic Talekeufouet",
+                "url": "https://github.com/talchrist" 
+            },
             "publisher": {
                 "@type": "Organization",
-                "name": "Christian Ludovic Talekeufouet",
+                "name": "QAlive",
                 "logo": {
                     "@type": "ImageObject",
                     "url": `${siteUrl}/images/logo.png`
@@ -63,8 +88,8 @@ const pageImage = `${siteUrl}/images/og-image.png`;
             }
         })} />
     </head>
-    <body class="font-mabry">
-        <div class="font-mabry">
+    <body class="font-sans antialiased bg-white text-black">
+        <div>
             <slot />
         </div>
     </body>
