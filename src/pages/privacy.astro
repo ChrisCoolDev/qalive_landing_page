@@ -3,14 +3,17 @@ import Layout from "../layouts/Layout.astro";
 import "../styles/global.css";
 ---
 
-<Layout>
-  <body class="font-sans antialiased bg-white text-black">
+<Layout
+  title="Privacy Policy | QAlive – Live Q&A Platform"
+  description="Read how QAlive (qalive.online, formerly qalive.ink) collects, uses and protects your data when you use our free live Q&A platform."
+>
+  <div class="font-sans antialiased bg-white text-black">
     <div class="min-h-screen">
       <header class="">
         <div class="mx-auto max-w-[900px] px-8">
           <div class="flex h-[52px] items-center justify-between">
             <a class="flex items-center gap-1 tracking-tight" href="/">
-              <img src="/images/qalive-new-logo.svg" alt="" class="w-5 h-5" />
+              <img src="/images/qalive-new-logo.svg" alt="QAlive logo" width="20" height="20" class="w-5 h-5" />
               <span class="text-sm font-medium">QAlive</span>
             </a>
             <div class="flex items-center gap-4">
@@ -242,7 +245,7 @@ import "../styles/global.css";
                   <a class="flex items-center gap-1 tracking-tight" href="/">
                     <img
                       src="/images/qalive-new-logo.svg"
-                      alt=""
+                      alt="QAlive logo"
                       class="w-5 h-5"
                     />
                     <span class="text-sm font-medium">QAlive</span>
@@ -287,11 +290,11 @@ import "../styles/global.css";
                     </p>
                     <a
                       class="text-[13px] text-[#555] tracking-tight hover:text-[#0A0A0A] transition-colors"
-                      href="/privacy">Privacy</a
+                      href="/privacy/">Privacy</a
                     >
                     <a
                       class="text-[13px] text-[#555] tracking-tight hover:text-[#0A0A0A] transition-colors"
-                      href="/terms">Terms</a
+                      href="/terms/">Terms</a
                     >
                   </div>
                 </div>
@@ -301,7 +304,7 @@ import "../styles/global.css";
               class="border-t border-[#E6E6E6] pt-6 flex flex-col md:flex-row md:items-center md:justify-between gap-4"
             >
               <p class="text-[11px] text-[#737373] tracking-tight">
-                © 2025 QAlive. Built with ❤️ for better events.
+                © {new Date().getFullYear()} QAlive · qalive.online. Built with ❤️ for better events.
               </p>
               <div class="flex items-center gap-4">
                 <a
@@ -339,5 +342,5 @@ import "../styles/global.css";
         </div>
       </footer>
     </div>
-  </body>
+  </div>
 </Layout>

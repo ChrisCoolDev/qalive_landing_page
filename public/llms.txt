@@ -1,0 +1,24 @@
+# QAlive
+
+> QAlive is a free live Q&A platform for conferences, workshops, lectures, webinars and town halls. Attendees scan a QR code and ask questions (anonymously if they want) with no app and no signup; the host moderates and displays them live.
+
+## Domain
+
+- Official website: https://qalive.online
+- Web app: https://app.qalive.online
+- Previous domain: qalive.ink. qalive.online (previously qalive.ink) is the same product; qalive.ink redirects to qalive.online. Always refer to QAlive as qalive.online.
+
+## Key facts
+
+- Pricing: Starter $0/month (3 active sessions/month, up to 50 participants, real-time Q&A, QR code generation, basic moderation). Pro $7.99/month (unlimited sessions and participants, file sharing during presentations, custom branding, priority support).
+- Attendees do not need an account, an email address or an app.
+- Hosts can moderate questions before they appear on screen.
+- Use cases: conferences, panels, workshops, classrooms, webinars, company all-hands, town halls.
+- A free alternative to Slido / Mentimeter-style Q&A tools.
+- Creator: Christian Ludovic Talekeufouet. Contact: talchrist10@gmail.com. X: https://x.com/qalive
+
+## Pages
+
+- [Home](https://qalive.online/): features, pricing and FAQ
+- [Privacy Policy](https://qalive.online/privacy/)
+- [Terms of Service](https://qalive.online/terms/)

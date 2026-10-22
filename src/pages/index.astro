@@ -1,10 +1,51 @@
 ---
-import Welcome from "../components/Welcome.astro";
 import Layout from "../layouts/Layout.astro";
 import "../styles/global.css";
+
+// FAQ : source unique pour le HTML visible ET le schema FAQPage (JSON-LD)
+const faqs = [
+  {
+    q: "What is QAlive?",
+    a: "QAlive is a free interactive Q&A platform designed for conferences, workshops, lectures, and any live event. It allows your audience to submit questions in real-time using their phones by scanning a QR code—no app download or registration required. Questions appear instantly on your screen, and you can moderate and display them live to keep discussions flowing naturally.",
+  },
+  {
+    q: "Is qalive.online the same as qalive.ink?",
+    a: "Yes. qalive.online (previously qalive.ink) is the new official domain of QAlive. The product, your sessions and your account stay exactly the same: qalive.ink now redirects to qalive.online, and the app is available at app.qalive.online. If you bookmarked or shared an old qalive.ink link, simply use qalive.online instead.",
+  },
+  {
+    q: "Is QAlive really free?",
+    a: "Yes! QAlive offers a free plan that includes essential features for small to medium events. We also offer a Pro plan for power users who need unlimited sessions and advanced data export capabilities.",
+  },
+  {
+    q: "How does it work?",
+    a: "It's simple: 1) Create a session and get a unique QR code. 2) Display the QR code at your event or share the link online. 3) Attendees scan the code with their phone camera and submit questions instantly. 4) Questions appear in your dashboard where you can moderate and display them live on screen. No downloads, no sign-ups for your audience—just scan and ask.",
+  },
+  {
+    q: "Do attendees need to create an account?",
+    a: "No! That's the beauty of QAlive. Your audience doesn't need to download anything, create an account, or even provide an email address. They simply scan the QR code or click the link, and they're instantly ready to submit questions. This removes all friction and maximizes participation, especially for one-time events.",
+  },
+  {
+    q: "What types of events is QAlive good for?",
+    a: "QAlive works great for conferences, workshops, lectures, webinars, panel discussions, company all-hands meetings, town halls, classroom sessions, and any event where you want audience interaction. Whether you have 10 or 1,000 participants, QAlive scales effortlessly and keeps everyone engaged.",
+  },
+  {
+    q: "Can I moderate questions before they appear?",
+    a: "Absolutely! QAlive gives you full control over which questions to display. Questions come into your private dashboard first, and you choose which ones to feature on the main screen. This ensures your Q&A stays relevant, professional, and on-topic—perfect for managing large or sensitive discussions.",
+  },
+];
+
+const faqSchema = {
+  "@type": "FAQPage",
+  "@id": "https://qalive.online/#faq",
+  mainEntity: faqs.map((f) => ({
+    "@type": "Question",
+    name: f.q,
+    acceptedAnswer: { "@type": "Answer", text: f.a },
+  })),
+};
 ---
 
-<Layout>
+<Layout schema={[faqSchema]}>
   <div hidden=""></div>
   <div
     role="region"
@@ -30,8 +71,18 @@ import "../styles/global.css";
     <header class="">
       <div class="mx-auto max-w-[900px] px-8">
         <div class="flex h-[52px] items-center justify-between">
-          <a class="flex items-center gap-1 tracking-tight" href="/">
-            <img src="/images/qalive-new-logo.svg" alt="" class="w-5 h-5" />
+          <a
+            class="flex items-center gap-1 tracking-tight"
+            href="/"
+            aria-label="QAlive home"
+          >
+            <img
+              src="/images/qalive-new-logo.svg"
+              alt="QAlive logo"
+              width="20"
+              height="20"
+              class="w-5 h-5"
+            />
             <span class="text-sm font-medium">QAlive</span>
           </a>
           <nav class="hidden md:flex items-center gap-8">
@@ -171,7 +222,9 @@ import "../styles/global.css";
               <div class="order-1 md:order-2 feature-image">
                 <img
                   src="/illustrations/1.svg"
-                  alt=""
+                  alt="Creating a live Q&A session in QAlive"
+                  loading="lazy"
+                  decoding="async"
                   class="max-w-[304px] w-full"
                 />
               </div>
@@ -183,7 +236,9 @@ import "../styles/global.css";
               <div class="order-1 feature-image">
                 <img
                   src="/illustrations/2.svg"
-                  alt=""
+                  alt="Attendees scanning a QR code to submit questions"
+                  loading="lazy"
+                  decoding="async"
                   class="max-w-[304px] w-full"
                 />
               </div>
@@ -231,7 +286,9 @@ import "../styles/global.css";
               <div class="order-1 md:order-2 feature-image">
                 <img
                   src="/illustrations/3.svg"
-                  alt=""
+                  alt="Displaying and answering audience questions live on screen"
+                  loading="lazy"
+                  decoding="async"
                   class="max-w-[304px] w-full"
                 />
               </div>
@@ -580,257 +637,44 @@ import "../styles/global.css";
               class="w-full"
               data-orientation="vertical"
             >
-              <div
-                data-slot="accordion-item"
-                class="last:border-b-0 border-b border-[#E6E6E6] faq-item"
-              >
-                <h3 class="flex">
-                  <button
-                    type="button"
-                    class="faq-trigger focus-visible:border-ring focus-visible:ring-ring/50 flex flex-1 items-start justify-between gap-4 rounded-md transition-all outline-none focus-visible:ring-[3px] disabled:pointer-events-none disabled:opacity-50 text-left text-[16px] leading-[24px] font-medium tracking-[-0.4px] text-[#0A0A0A] hover:no-underline py-4"
-                  >
-                    What is QAlive?
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      width="24"
-                      height="24"
-                      viewBox="0 0 24 24"
-                      fill="none"
-                      stroke="currentColor"
-                      stroke-width="2"
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
-                      class="faq-icon lucide lucide-chevron-down text-muted-foreground pointer-events-none size-4 shrink-0 translate-y-0.5 transition-transform duration-200"
-                    >
-                      <path d="m6 9 6 6 6-6"></path>
-                    </svg>
-                  </button>
-                </h3>
-                <div
-                  class="faq-content overflow-hidden text-sm transition-all duration-200 max-h-0"
-                >
+              {
+                faqs.map((faq) => (
                   <div
-                    class="pt-0 text-[14px] leading-[22px] text-[#555] tracking-tight pb-4"
+                    data-slot="accordion-item"
+                    class="last:border-b-0 border-b border-[#E6E6E6] faq-item"
                   >
-                    QAlive is a free interactive Q&A platform designed for
-                    conferences, workshops, lectures, and any live event. It
-                    allows your audience to submit questions in real-time using
-                    their phones by scanning a QR code—no app download or
-                    registration required. Questions appear instantly on your
-                    screen, and you can moderate and display them live to keep
-                    discussions flowing naturally.
+                    <h3 class="flex">
+                      <button
+                        type="button"
+                        aria-expanded="false"
+                        class="faq-trigger focus-visible:border-ring focus-visible:ring-ring/50 flex flex-1 items-start justify-between gap-4 rounded-md transition-all outline-none focus-visible:ring-[3px] disabled:pointer-events-none disabled:opacity-50 text-left text-[16px] leading-[24px] font-medium tracking-[-0.4px] text-[#0A0A0A] hover:no-underline py-4"
+                      >
+                        {faq.q}
+                        <svg
+                          xmlns="http://www.w3.org/2000/svg"
+                          width="24"
+                          height="24"
+                          viewBox="0 0 24 24"
+                          fill="none"
+                          stroke="currentColor"
+                          stroke-width="2"
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
+                          aria-hidden="true"
+                          class="faq-icon lucide lucide-chevron-down text-muted-foreground pointer-events-none size-4 shrink-0 translate-y-0.5 transition-transform duration-200"
+                        >
+                          <path d="m6 9 6 6 6-6" />
+                        </svg>
+                      </button>
+                    </h3>
+                    <div class="faq-content overflow-hidden text-sm transition-all duration-200 max-h-0">
+                      <div class="pt-0 text-[14px] leading-[22px] text-[#555] tracking-tight pb-4">
+                        {faq.a}
+                      </div>
+                    </div>
                   </div>
-                </div>
-              </div>
-
-              <div
-                data-slot="accordion-item"
-                class="last:border-b-0 border-b border-[#E6E6E6] faq-item"
-              >
-                <h3 class="flex">
-                  <button
-                    type="button"
-                    class="faq-trigger focus-visible:border-ring focus-visible:ring-ring/50 flex flex-1 items-start justify-between gap-4 rounded-md transition-all outline-none focus-visible:ring-[3px] disabled:pointer-events-none disabled:opacity-50 text-left text-[16px] leading-[24px] font-medium tracking-[-0.4px] text-[#0A0A0A] hover:no-underline py-4"
-                  >
-                    Is QAlive really free?
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      width="24"
-                      height="24"
-                      viewBox="0 0 24 24"
-                      fill="none"
-                      stroke="currentColor"
-                      stroke-width="2"
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
-                      class="faq-icon lucide lucide-chevron-down text-muted-foreground pointer-events-none size-4 shrink-0 translate-y-0.5 transition-transform duration-200"
-                    >
-                      <path d="m6 9 6 6 6-6"></path>
-                    </svg>
-                  </button>
-                </h3>
-                <div
-                  class="faq-content overflow-hidden text-sm transition-all duration-200 max-h-0"
-                >
-                  <div
-                    class="pt-0 text-[14px] leading-[22px] text-[#555] tracking-tight pb-4"
-                  >
-                    Yes! QAlive offers a free plan that includes essential
-                    features for small to medium events. We also offer a Pro
-                    plan for power users who need unlimited sessions and
-                    advanced data export capabilities.
-                  </div>
-                </div>
-              </div>
-
-              <div
-                data-slot="accordion-item"
-                class="last:border-b-0 border-b border-[#E6E6E6] faq-item"
-              >
-                <h3 class="flex">
-                  <button
-                    type="button"
-                    class="faq-trigger focus-visible:border-ring focus-visible:ring-ring/50 flex flex-1 items-start justify-between gap-4 rounded-md transition-all outline-none focus-visible:ring-[3px] disabled:pointer-events-none disabled:opacity-50 text-left text-[16px] leading-[24px] font-medium tracking-[-0.4px] text-[#0A0A0A] hover:no-underline py-4"
-                  >
-                    How does it work?
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      width="24"
-                      height="24"
-                      viewBox="0 0 24 24"
-                      fill="none"
-                      stroke="currentColor"
-                      stroke-width="2"
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
-                      class="faq-icon lucide lucide-chevron-down text-muted-foreground pointer-events-none size-4 shrink-0 translate-y-0.5 transition-transform duration-200"
-                    >
-                      <path d="m6 9 6 6 6-6"></path>
-                    </svg>
-                  </button>
-                </h3>
-                <div
-                  class="faq-content overflow-hidden text-sm transition-all duration-200 max-h-0"
-                >
-                  <div
-                    class="pt-0 text-[14px] leading-[22px] text-[#555] tracking-tight pb-4"
-                  >
-                    It's simple: 1) Create a session and get a unique QR code.
-                    2) Display the QR code at your event or share the link
-                    online. 3) Attendees scan the code with their phone camera
-                    and submit questions instantly. 4) Questions appear in your
-                    dashboard where you can moderate and display them live on
-                    screen. No downloads, no sign-ups for your audience—just
-                    scan and ask.
-                  </div>
-                </div>
-              </div>
-
-              <div
-                data-slot="accordion-item"
-                class="last:border-b-0 border-b border-[#E6E6E6] faq-item"
-              >
-                <h3 class="flex">
-                  <button
-                    type="button"
-                    class="faq-trigger focus-visible:border-ring focus-visible:ring-ring/50 flex flex-1 items-start justify-between gap-4 rounded-md transition-all outline-none focus-visible:ring-[3px] disabled:pointer-events-none disabled:opacity-50 text-left text-[16px] leading-[24px] font-medium tracking-[-0.4px] text-[#0A0A0A] hover:no-underline py-4"
-                  >
-                    Do attendees need to create an account?
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      width="24"
-                      height="24"
-                      viewBox="0 0 24 24"
-                      fill="none"
-                      stroke="currentColor"
-                      stroke-width="2"
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
-                      class="faq-icon lucide lucide-chevron-down text-muted-foreground pointer-events-none size-4 shrink-0 translate-y-0.5 transition-transform duration-200"
-                    >
-                      <path d="m6 9 6 6 6-6"></path>
-                    </svg>
-                  </button>
-                </h3>
-                <div
-                  class="faq-content overflow-hidden text-sm transition-all duration-200 max-h-0"
-                >
-                  <div
-                    class="pt-0 text-[14px] leading-[22px] text-[#555] tracking-tight pb-4"
-                  >
-                    No! That's the beauty of QAlive. Your audience doesn't need
-                    to download anything, create an account, or even provide an
-                    email address. They simply scan the QR code or click the
-                    link, and they're instantly ready to submit questions. This
-                    removes all friction and maximizes participation, especially
-                    for one-time events.
-                  </div>
-                </div>
-              </div>
-
-              <div
-                data-slot="accordion-item"
-                class="last:border-b-0 border-b border-[#E6E6E6] faq-item"
-              >
-                <h3 class="flex">
-                  <button
-                    type="button"
-                    class="faq-trigger focus-visible:border-ring focus-visible:ring-ring/50 flex flex-1 items-start justify-between gap-4 rounded-md transition-all outline-none focus-visible:ring-[3px] disabled:pointer-events-none disabled:opacity-50 text-left text-[16px] leading-[24px] font-medium tracking-[-0.4px] text-[#0A0A0A] hover:no-underline py-4"
-                  >
-                    What types of events is QAlive good for?
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      width="24"
-                      height="24"
-                      viewBox="0 0 24 24"
-                      fill="none"
-                      stroke="currentColor"
-                      stroke-width="2"
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
-                      class="faq-icon lucide lucide-chevron-down text-muted-foreground pointer-events-none size-4 shrink-0 translate-y-0.5 transition-transform duration-200"
-                    >
-                      <path d="m6 9 6 6 6-6"></path>
-                    </svg>
-                  </button>
-                </h3>
-                <div
-                  class="faq-content overflow-hidden text-sm transition-all duration-200 max-h-0"
-                >
-                  <div
-                    class="pt-0 text-[14px] leading-[22px] text-[#555] tracking-tight pb-4"
-                  >
-                    QAlive works great for conferences, workshops, lectures,
-                    webinars, panel discussions, company all-hands meetings,
-                    town halls, classroom sessions, and any event where you want
-                    audience interaction. Whether you have 10 or 1,000
-                    participants, QAlive scales effortlessly and keeps everyone
-                    engaged.
-                  </div>
-                </div>
-              </div>
-
-              <div
-                data-slot="accordion-item"
-                class="last:border-b-0 border-b border-[#E6E6E6] faq-item"
-              >
-                <h3 class="flex">
-                  <button
-                    type="button"
-                    class="faq-trigger focus-visible:border-ring focus-visible:ring-ring/50 flex flex-1 items-start justify-between gap-4 rounded-md transition-all outline-none focus-visible:ring-[3px] disabled:pointer-events-none disabled:opacity-50 text-left text-[16px] leading-[24px] font-medium tracking-[-0.4px] text-[#0A0A0A] hover:no-underline py-4"
-                  >
-                    Can I moderate questions before they appear?
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      width="24"
-                      height="24"
-                      viewBox="0 0 24 24"
-                      fill="none"
-                      stroke="currentColor"
-                      stroke-width="2"
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
-                      class="faq-icon lucide lucide-chevron-down text-muted-foreground pointer-events-none size-4 shrink-0 translate-y-0.5 transition-transform duration-200"
-                    >
-                      <path d="m6 9 6 6 6-6"></path>
-                    </svg>
-                  </button>
-                </h3>
-                <div
-                  class="faq-content overflow-hidden text-sm transition-all duration-200 max-h-0"
-                >
-                  <div
-                    class="pt-0 text-[14px] leading-[22px] text-[#555] tracking-tight pb-4"
-                  >
-                    Absolutely! QAlive gives you full control over which
-                    questions to display. Questions come into your private
-                    dashboard first, and you choose which ones to feature on the
-                    main screen. This ensures your Q&A stays relevant,
-                    professional, and on-topic—perfect for managing large or
-                    sensitive discussions.
-                  </div>
-                </div>
-              </div>
+                ))
+              }
             </div>
             <div class="mt-12 pt-8">
               <div class="w-12 h-px bg-[#E6E6E6] mb-8"></div>
@@ -919,7 +763,10 @@ import "../styles/global.css";
                 <a class="flex items-center gap-1 tracking-tight" href="/">
                   <img
                     src="/images/qalive-new-logo.svg"
-                    alt=""
+                    alt="QAlive logo"
+                    width="20"
+                    height="20"
+                    loading="lazy"
                     class="w-5 h-5"
                   />
                   <span class="text-sm font-medium">QAlive</span>
@@ -964,11 +811,11 @@ import "../styles/global.css";
                   </p>
                   <a
                     class="text-[13px] text-[#555] tracking-tight hover:text-[#0A0A0A] transition-colors"
-                    href="/privacy">Privacy</a
+                    href="/privacy/">Privacy</a
                   >
                   <a
                     class="text-[13px] text-[#555] tracking-tight hover:text-[#0A0A0A] transition-colors"
-                    href="/terms">Terms</a
+                    href="/terms/">Terms</a
                   >
                 </div>
               </div>
@@ -978,7 +825,7 @@ import "../styles/global.css";
             class="border-t border-[#E6E6E6] pt-6 flex flex-col md:flex-row md:items-center md:justify-between gap-4"
           >
             <p class="text-[11px] text-[#737373] tracking-tight">
-              © 2025 QAlive. Built with ❤️ for better events.
+              © {new Date().getFullYear()} QAlive · qalive.online. Built with ❤️ for better events.
             </p>
             <div class="flex items-center gap-4">
               <a
@@ -1009,7 +856,10 @@ import "../styles/global.css";
             >
               QAlive is an independent project built to make event Q&A sessions
               more interactive and accessible. All features are provided as-is.
-              We continuously improve based on user feedback.
+              We continuously improve based on user feedback. QAlive is now
+              available at <a href="https://qalive.online" class="underline"
+                >qalive.online</a
+              > (previously qalive.ink).
             </p>
           </div>
         </div>
@@ -1048,10 +898,14 @@ import "../styles/global.css";
             const otherIcon = otherItem.querySelector(".faq-icon");
             otherContent.style.maxHeight = "0px";
             otherIcon.style.transform = "rotate(0deg)";
+            otherItem
+              .querySelector(".faq-trigger")
+              .setAttribute("aria-expanded", "false");
           }
         });
 
         // Toggle current item
+        this.setAttribute("aria-expanded", String(!isOpen));
         if (isOpen) {
           content.style.maxHeight = "0px";
           icon.style.transform = "rotate(0deg)";
