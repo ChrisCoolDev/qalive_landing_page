@@ -6,6 +6,6 @@ export default defineConfig({
     /*server: {
         host: true, // ou '0.0.0.0'
     },*/
-    site: 'https://qalive.ink',
+    site: 'https://qalive.online',
     integrations: [sitemap()],
 });
