@@ -1,0 +1,64 @@
+---
+interface Props {
+  currentLang?: 'EN' | 'FR';
+  currentPath?: string;
+}
+
+const { currentLang = 'EN', currentPath = '/blog' } = Astro.props;
+
+// Calcul de l'URL dans l'autre langue
+const targetLang = currentLang === 'EN' ? 'FR' : 'EN';
+const switchUrl = currentLang === 'EN' 
+  ? `/fr${currentPath.startsWith('/') ? currentPath : `/${currentPath}`}`
+  : currentPath.replace(/^\/fr/, '') || '/';
+---
+
+<header class="border-b border-[#E6E6E6] bg-white sticky top-0 z-50">
+  <div class="mx-auto max-w-[1000px] px-6 md:px-8">
+    <div class="flex h-[60px] items-center justify-between">
+      <a class="flex items-center gap-2 tracking-tight" href={currentLang === 'FR' ? '/fr' : '/'} aria-label="QAlive home">
+        <img
+          src="/images/qalive-new-logo.svg"
+          alt="QAlive logo"
+          width="24"
+          height="24"
+          class="w-6 h-6"
+        />
+        <span class="text-base font-semibold">QAlive</span>
+      </a>
+
+      <nav class="hidden md:flex items-center gap-7 text-sm font-medium text-[#555]">
+        <a class="transition-colors hover:text-[#161924]" href={currentLang === 'FR' ? '/fr#features' : '/#features'}>
+          {currentLang === 'FR' ? 'Fonctionnalités' : 'Features'}
+        </a>
+        <a class="transition-colors hover:text-[#161924]" href={currentLang === 'FR' ? '/fr#pricing' : '/#pricing'}>
+          {currentLang === 'FR' ? 'Tarifs' : 'Pricing'}
+        </a>
+        <a class="transition-colors hover:text-[#161924]" href={currentLang === 'FR' ? '/fr/blog' : '/blog'}>
+          Blog
+        </a>
+        <a class="transition-colors hover:text-[#161924]" href={currentLang === 'FR' ? '/fr/changelog' : '/changelog'}>
+          Changelog
+        </a>
+      </nav>
+
+      <div class="flex items-center gap-3">
+        <!-- Sélecteur de langue -->
+        <a
+          href={switchUrl}
+          class="text-xs font-semibold px-2.5 py-1 rounded border border-[#E6E6E6] text-gray-700 hover:bg-[#F6F5EF] transition-colors"
+          title={`Switch to ${targetLang}`}
+        >
+          🌐 {targetLang}
+        </a>
+
+        <!-- Bouton Login App -->
+        <a href="https://app.qalive.online" target="_blank" rel="noopener">
+          <button class="h-8 px-4 rounded bg-[#E85D4A] text-xs font-medium text-white hover:bg-[#d44d3c] transition-colors shadow-sm">
+            {currentLang === 'FR' ? 'Connexion' : 'Login'}
+          </button>
+        </a>
+      </div>
+    </div>
+  </div>
+</header>
