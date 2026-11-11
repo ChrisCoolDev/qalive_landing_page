@@ -1,61 +1,46 @@
 ---
 interface Props {
-  currentLang?: 'EN' | 'FR';
   currentPath?: string;
 }
 
-const { currentLang = 'EN', currentPath = '/blog' } = Astro.props;
-
-// Calcul de l'URL dans l'autre langue
-const targetLang = currentLang === 'EN' ? 'FR' : 'EN';
-const switchUrl = currentLang === 'EN' 
-  ? `/fr${currentPath.startsWith('/') ? currentPath : `/${currentPath}`}`
-  : currentPath.replace(/^\/fr/, '') || '/';
+const { currentPath = '/blog' } = Astro.props;
+const isBlog = currentPath.includes('/blog');
 ---
 
 <header class="border-b border-[#E6E6E6] bg-white sticky top-0 z-50">
-  <div class="mx-auto max-w-[1000px] px-6 md:px-8">
-    <div class="flex h-[60px] items-center justify-between">
-      <a class="flex items-center gap-2 tracking-tight" href={currentLang === 'FR' ? '/fr' : '/'} aria-label="QAlive home">
+  <div class="mx-auto max-w-[950px] px-6 sm:px-8">
+    <div class="flex h-[52px] items-center justify-between">
+      <a class="flex items-center gap-1.5 tracking-tight" href="/" aria-label="QAlive home">
         <img
           src="/images/qalive-new-logo.svg"
           alt="QAlive logo"
-          width="24"
-          height="24"
-          class="w-6 h-6"
+          width="20"
+          height="20"
+          class="w-5 h-5"
         />
-        <span class="text-base font-semibold">QAlive</span>
+        <span class="text-sm font-medium">QAlive</span>
       </a>
 
-      <nav class="hidden md:flex items-center gap-7 text-sm font-medium text-[#555]">
-        <a class="transition-colors hover:text-[#161924]" href={currentLang === 'FR' ? '/fr#features' : '/#features'}>
-          {currentLang === 'FR' ? 'Fonctionnalités' : 'Features'}
+      <nav class="hidden md:flex items-center gap-8">
+        <a class="text-sm tracking-tight text-[#555] transition-colors hover:text-black hover:underline underline-offset-4" href="/#features">
+          Features
         </a>
-        <a class="transition-colors hover:text-[#161924]" href={currentLang === 'FR' ? '/fr#pricing' : '/#pricing'}>
-          {currentLang === 'FR' ? 'Tarifs' : 'Pricing'}
+        <a class="text-sm tracking-tight text-[#555] transition-colors hover:text-black hover:underline underline-offset-4" href="/#pricing">
+          Pricing
         </a>
-        <a class="transition-colors hover:text-[#161924]" href={currentLang === 'FR' ? '/fr/blog' : '/blog'}>
+        <a
+          class="text-sm tracking-tight text-[#555] transition-colors hover:text-black hover:underline underline-offset-4"
+          href="https://blog.qalive.online"
+        >
           Blog
-        </a>
-        <a class="transition-colors hover:text-[#161924]" href={currentLang === 'FR' ? '/fr/changelog' : '/changelog'}>
-          Changelog
         </a>
       </nav>
 
       <div class="flex items-center gap-3">
-        <!-- Sélecteur de langue -->
-        <a
-          href={switchUrl}
-          class="text-xs font-semibold px-2.5 py-1 rounded border border-[#E6E6E6] text-gray-700 hover:bg-[#F6F5EF] transition-colors"
-          title={`Switch to ${targetLang}`}
-        >
-          🌐 {targetLang}
-        </a>
-
-        <!-- Bouton Login App -->
+        <!-- Login Button -->
         <a href="https://app.qalive.online" target="_blank" rel="noopener">
-          <button class="h-8 px-4 rounded bg-[#E85D4A] text-xs font-medium text-white hover:bg-[#d44d3c] transition-colors shadow-sm">
-            {currentLang === 'FR' ? 'Connexion' : 'Login'}
+          <button class="h-7 w-12 sm:w-16 rounded bg-[#E85D4A] text-[12px] text-white hover:bg-[#E85D4A]/90 transition-colors font-medium">
+            Login
           </button>
         </a>
       </div>

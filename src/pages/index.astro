@@ -14,7 +14,7 @@ const faqs = [
   },
   {
     q: "Is QAlive really free?",
-    a: "Yes! QAlive offers a free plan that includes essential features for small to medium events. We also offer a Pro plan for power users who need unlimited sessions and advanced data export capabilities.",
+    a: "Yes! QAlive offers a Free plan with essential features (1 test session, up to 15 participants and 15 questions). For your live events, you can pick the $9 Event Pass (valid for 7 days) or the Pro subscription at $9/month with unlimited sessions and participants.",
   },
   {
     q: "How does it work?",
@@ -96,11 +96,7 @@ const faqSchema = {
             >
             <a
               class="text-sm tracking-tight text-[#555] transition-colors hover:text-black hover:underline underline-offset-4"
-              href="/blog">Blog</a
-            >
-            <a
-              class="text-sm tracking-tight text-[#555] transition-colors hover:text-black hover:underline underline-offset-4"
-              href="/changelog">Changelog</a
+              href="https://blog.qalive.online">Blog</a
             >
             <a
               class="text-sm tracking-tight text-[#555] transition-colors hover:text-black hover:underline underline-offset-4"
@@ -318,311 +314,489 @@ const faqSchema = {
         </div>
         <section id="pricing" class="">
           <div class="mx-auto max-w-[1024px] px-8">
-            <div class="mx-auto max-w-[600px]">
-              <div class="mb-6 grid gap-6 grid-cols-1 md:grid-cols-2">
+            <div class="mx-auto max-w-[920px]">
+              <div class="mb-6 grid gap-6 grid-cols-1 md:grid-cols-3">
+                <!-- Free Plan -->
                 <div
-                  class="relative border border-[#E6E6E6] rounded-lg p-6 flex flex-col transition-all duration-300 hover:scale-[1.02] hover:shadow-lg bg-white"
+                  class="relative border border-[#E6E6E6] rounded-lg p-6 flex flex-col justify-between transition-all duration-300 hover:scale-[1.02] hover:shadow-lg bg-white"
                 >
-                  <div class="mb-6">
-                    <div class="mb-4 flex items-center gap-2">
-                      <span
-                        class="text-[16px] leading-[24px] font-medium tracking-[-0.4px] text-[#0A0A0A]"
-                        >Starter</span
-                      >
+                  <div>
+                    <div class="mb-6">
+                      <div class="mb-4 flex items-center justify-between">
+                        <span
+                          class="text-[16px] leading-[24px] font-medium tracking-[-0.4px] text-[#0A0A0A]"
+                          >Free</span
+                        >
+                      </div>
+                      <div class="mb-1 flex items-baseline gap-2">
+                        <span
+                          class="text-[26px] leading-[36px] font-medium tracking-[-0.6px] text-[#0A0A0A]"
+                          >$0</span
+                        >
+                        <span
+                          class="text-[13px] leading-[21px] font-normal text-[#555555]"
+                          >/forever</span
+                        >
+                      </div>
                     </div>
-                    <div class="mb-4 flex items-baseline gap-2">
-                      <span
-                        class="text-[24px] leading-[36px] font-medium tracking-[-0.6px] text-[#0A0A0A]"
-                        >$0</span
-                      >
-                      <span
-                        class="text-[14px] leading-[21px] font-normal text-[#555555]"
-                        >/month</span
-                      >
-                    </div>
+                    <ul class="mb-6 space-y-2">
+                      <li class="text-[13px] tracking-tight">
+                        <div class="flex items-start gap-2">
+                          <span class="text-[#555] mt-0.5">
+                            <svg
+                              width="16"
+                              height="16"
+                              viewBox="0 0 16 16"
+                              fill="none"
+                              xmlns="http://www.w3.org/2000/svg"
+                              class="flex-shrink-0"
+                            >
+                              <path
+                                d="M13.3333 4L6 11.3333L2.66667 8"
+                                stroke="currentColor"
+                                stroke-width="1.5"
+                                stroke-linecap="round"
+                                stroke-linejoin="round"></path>
+                            </svg>
+                          </span>
+                          <span>1 test session (live mode only)</span>
+                        </div>
+                      </li>
+                      <li class="text-[13px] tracking-tight">
+                        <div class="flex items-start gap-2">
+                          <span class="text-[#555] mt-0.5">
+                            <svg
+                              width="16"
+                              height="16"
+                              viewBox="0 0 16 16"
+                              fill="none"
+                              xmlns="http://www.w3.org/2000/svg"
+                              class="flex-shrink-0"
+                            >
+                              <path
+                                d="M13.3333 4L6 11.3333L2.66667 8"
+                                stroke="currentColor"
+                                stroke-width="1.5"
+                                stroke-linecap="round"
+                                stroke-linejoin="round"></path>
+                            </svg>
+                          </span>
+                          <span>1 hour per session</span>
+                        </div>
+                      </li>
+                      <li class="text-[13px] tracking-tight">
+                        <div class="flex items-start gap-2">
+                          <span class="text-[#555] mt-0.5">
+                            <svg
+                              width="16"
+                              height="16"
+                              viewBox="0 0 16 16"
+                              fill="none"
+                              xmlns="http://www.w3.org/2000/svg"
+                              class="flex-shrink-0"
+                            >
+                              <path
+                                d="M13.3333 4L6 11.3333L2.66667 8"
+                                stroke="currentColor"
+                                stroke-width="1.5"
+                                stroke-linecap="round"
+                                stroke-linejoin="round"></path>
+                            </svg>
+                          </span>
+                          <span>Public sessions only</span>
+                        </div>
+                      </li>
+                      <li class="text-[13px] tracking-tight">
+                        <div class="flex items-start gap-2">
+                          <span class="text-[#555] mt-0.5">
+                            <svg
+                              width="16"
+                              height="16"
+                              viewBox="0 0 16 16"
+                              fill="none"
+                              xmlns="http://www.w3.org/2000/svg"
+                              class="flex-shrink-0"
+                            >
+                              <path
+                                d="M13.3333 4L6 11.3333L2.66667 8"
+                                stroke="currentColor"
+                                stroke-width="1.5"
+                                stroke-linecap="round"
+                                stroke-linejoin="round"></path>
+                            </svg>
+                          </span>
+                          <span>Up to 15 participants &amp; questions</span>
+                        </div>
+                      </li>
+                      <li class="text-[13px] tracking-tight">
+                        <div class="flex items-start gap-2">
+                          <span class="text-[#555] mt-0.5">
+                            <svg
+                              width="16"
+                              height="16"
+                              viewBox="0 0 16 16"
+                              fill="none"
+                              xmlns="http://www.w3.org/2000/svg"
+                              class="flex-shrink-0"
+                            >
+                              <path
+                                d="M13.3333 4L6 11.3333L2.66667 8"
+                                stroke="currentColor"
+                                stroke-width="1.5"
+                                stroke-linecap="round"
+                                stroke-linejoin="round"></path>
+                            </svg>
+                          </span>
+                          <span>File sharing up to 5 MB</span>
+                        </div>
+                      </li>
+                    </ul>
                   </div>
-                  <ul class="mb-6 flex-1 space-y-2">
-                    <li class="text-[13px] tracking-tight">
-                      <div class="flex items-start gap-2">
-                        <span class="text-[#555] mt-0.5">
-                          <svg
-                            width="16"
-                            height="16"
-                            viewBox="0 0 16 16"
-                            fill="none"
-                            xmlns="http://www.w3.org/2000/svg"
-                            class="flex-shrink-0"
-                          >
-                            <path
-                              d="M13.3333 4L6 11.3333L2.66667 8"
-                              stroke="currentColor"
-                              stroke-width="1.5"
-                              stroke-linecap="round"
-                              stroke-linejoin="round"></path>
-                          </svg>
-                        </span>
-                        <span>3 active sessions / month</span>
-                      </div>
-                    </li>
-                    <li class="text-[13px] tracking-tight">
-                      <div class="flex items-start gap-2">
-                        <span class="text-[#555] mt-0.5">
-                          <svg
-                            width="16"
-                            height="16"
-                            viewBox="0 0 16 16"
-                            fill="none"
-                            xmlns="http://www.w3.org/2000/svg"
-                            class="flex-shrink-0"
-                          >
-                            <path
-                              d="M13.3333 4L6 11.3333L2.66667 8"
-                              stroke="currentColor"
-                              stroke-width="1.5"
-                              stroke-linecap="round"
-                              stroke-linejoin="round"></path>
-                          </svg>
-                        </span>
-                        <span>Up to 50 participants</span>
-                      </div>
-                    </li>
-                    <li class="text-[13px] tracking-tight">
-                      <div class="flex items-start gap-2">
-                        <span class="text-[#555] mt-0.5">
-                          <svg
-                            width="16"
-                            height="16"
-                            viewBox="0 0 16 16"
-                            fill="none"
-                            xmlns="http://www.w3.org/2000/svg"
-                            class="flex-shrink-0"
-                          >
-                            <path
-                              d="M13.3333 4L6 11.3333L2.66667 8"
-                              stroke="currentColor"
-                              stroke-width="1.5"
-                              stroke-linecap="round"
-                              stroke-linejoin="round"></path>
-                          </svg>
-                        </span>
-                        <span>Real-time Q&A</span>
-                      </div>
-                    </li>
-                    <li class="text-[13px] tracking-tight">
-                      <div class="flex items-start gap-2">
-                        <span class="text-[#555] mt-0.5">
-                          <svg
-                            width="16"
-                            height="16"
-                            viewBox="0 0 16 16"
-                            fill="none"
-                            xmlns="http://www.w3.org/2000/svg"
-                            class="flex-shrink-0"
-                          >
-                            <path
-                              d="M13.3333 4L6 11.3333L2.66667 8"
-                              stroke="currentColor"
-                              stroke-width="1.5"
-                              stroke-linecap="round"
-                              stroke-linejoin="round"></path>
-                          </svg>
-                        </span>
-                        <span>QR code generation</span>
-                      </div>
-                    </li>
-                    <li class="text-[13px] tracking-tight">
-                      <div class="flex items-start gap-2">
-                        <span class="text-[#555] mt-0.5">
-                          <svg
-                            width="16"
-                            height="16"
-                            viewBox="0 0 16 16"
-                            fill="none"
-                            xmlns="http://www.w3.org/2000/svg"
-                            class="flex-shrink-0"
-                          >
-                            <path
-                              d="M13.3333 4L6 11.3333L2.66667 8"
-                              stroke="currentColor"
-                              stroke-width="1.5"
-                              stroke-linecap="round"
-                              stroke-linejoin="round"></path>
-                          </svg>
-                        </span>
-                        <span>Basic moderation</span>
-                      </div>
-                    </li>
-                  </ul>
-                  <div class="space-y-2">
+                  <div class="space-y-2 pt-4">
                     <a
                       data-slot="button"
-                      class="inline-flex items-center justify-center whitespace-nowrap disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg:not([class*='size-'])]:size-4 shrink-0 [&_svg]:shrink-0 outline-none focus-visible:border-ring focus-visible:ring-ring/50 focus-visible:ring-[3px] aria-invalid:ring-destructive/20 dark:aria-invalid:ring-destructive/40 aria-invalid:border-destructive h-8 gap-1.5 has-[>svg]:px-2.5 w-full rounded px-4 py-2 text-xs tracking-tight transition-all bg-[#E85D4A] text-white hover:bg-[#E85D4A]/90 hover:scale-105"
+                      class="inline-flex items-center justify-center whitespace-nowrap outline-none h-8 gap-1.5 w-full rounded px-4 py-2 text-xs tracking-tight transition-all bg-[#E85D4A] text-white hover:bg-[#E85D4A]/90 hover:scale-105"
                       href="https://app.qalive.online">Start for free</a
                     >
                   </div>
                 </div>
 
+                <!-- Event Pass -->
                 <div
-                  class="relative border border-[#E6E6E6] rounded-lg p-6 flex flex-col transition-all duration-300 hover:scale-[1.02] hover:shadow-xl bg-white"
+                  class="relative border border-[#d7d7d7] rounded-lg p-6 flex flex-col justify-between transition-all duration-300 hover:scale-[1.02] hover:shadow-xl bg-white"
                 >
-                  <div class="mb-6">
-                    <div class="mb-4 flex items-center gap-2">
-                      <span
-                        class="text-[16px] leading-[24px] font-medium tracking-[-0.4px] text-[#0A0A0A]"
-                        >Pro</span
-                      >
+                  <div>
+                    <div class="mb-6">
+                      <div class="mb-4 flex items-center gap-2">
+                        <span
+                          class="text-[16px] leading-[24px] font-medium tracking-[-0.4px] text-[#0A0A0A]"
+                          >Event Pass</span
+                        >
+                      </div>
+                      <div class="mb-1 flex items-baseline gap-2">
+                        <span
+                          class="text-[26px] leading-[36px] font-medium tracking-[-0.6px] text-[#0A0A0A]"
+                          >$9</span
+                        >
+                        <span
+                          class="text-[12px] leading-[21px] font-normal text-[#555555]"
+                          >one-time payment</span
+                        >
+                      </div>
+                      <p class="text-[11px] text-[#777]">Valid for 7 days</p>
                     </div>
-                    <div class="mb-4 flex items-baseline gap-2">
-                      <span
-                        class="text-[24px] leading-[36px] font-medium tracking-[-0.6px] text-[#0A0A0A]"
-                        >$12.99</span
-                      >
-                      <span
-                        class="text-[14px] leading-[21px] font-normal text-[#555555]"
-                        >/month</span
-                      >
-                    </div>
+                    <ul class="mb-6 space-y-2">
+                      <li class="text-[13px] tracking-tight">
+                        <div class="flex items-start gap-2">
+                          <span class="text-[#E85D4A] mt-0.5">
+                            <svg
+                              width="16"
+                              height="16"
+                              viewBox="0 0 16 16"
+                              fill="none"
+                              xmlns="http://www.w3.org/2000/svg"
+                              class="flex-shrink-0"
+                            >
+                              <path
+                                d="M13.3333 4L6 11.3333L2.66667 8"
+                                stroke="currentColor"
+                                stroke-width="1.5"
+                                stroke-linecap="round"
+                                stroke-linejoin="round"></path>
+                            </svg>
+                          </span>
+                          <span>Unlimited sessions for 7 days</span>
+                        </div>
+                      </li>
+                      <li class="text-[13px] tracking-tight">
+                        <div class="flex items-start gap-2">
+                          <span class="text-[#E85D4A] mt-0.5">
+                            <svg
+                              width="16"
+                              height="16"
+                              viewBox="0 0 16 16"
+                              fill="none"
+                              xmlns="http://www.w3.org/2000/svg"
+                              class="flex-shrink-0"
+                            >
+                              <path
+                                d="M13.3333 4L6 11.3333L2.66667 8"
+                                stroke="currentColor"
+                                stroke-width="1.5"
+                                stroke-linecap="round"
+                                stroke-linejoin="round"></path>
+                            </svg>
+                          </span>
+                          <span>Schedule sessions in advance</span>
+                        </div>
+                      </li>
+                      <li class="text-[13px] tracking-tight">
+                        <div class="flex items-start gap-2">
+                          <span class="text-[#E85D4A] mt-0.5">
+                            <svg
+                              width="16"
+                              height="16"
+                              viewBox="0 0 16 16"
+                              fill="none"
+                              xmlns="http://www.w3.org/2000/svg"
+                              class="flex-shrink-0"
+                            >
+                              <path
+                                d="M13.3333 4L6 11.3333L2.66667 8"
+                                stroke="currentColor"
+                                stroke-width="1.5"
+                                stroke-linecap="round"
+                                stroke-linejoin="round"></path>
+                            </svg>
+                          </span>
+                          <span>Private sessions with access code</span>
+                        </div>
+                      </li>
+                      <li class="text-[13px] tracking-tight">
+                        <div class="flex items-start gap-2">
+                          <span class="text-[#E85D4A] mt-0.5">
+                            <svg
+                              width="16"
+                              height="16"
+                              viewBox="0 0 16 16"
+                              fill="none"
+                              xmlns="http://www.w3.org/2000/svg"
+                              class="flex-shrink-0"
+                            >
+                              <path
+                                d="M13.3333 4L6 11.3333L2.66667 8"
+                                stroke="currentColor"
+                                stroke-width="1.5"
+                                stroke-linecap="round"
+                                stroke-linejoin="round"></path>
+                            </svg>
+                          </span>
+                          <span>Custom session duration</span>
+                        </div>
+                      </li>
+                      <li class="text-[13px] tracking-tight">
+                        <div class="flex items-start gap-2">
+                          <span class="text-[#E85D4A] mt-0.5">
+                            <svg
+                              width="16"
+                              height="16"
+                              viewBox="0 0 16 16"
+                              fill="none"
+                              xmlns="http://www.w3.org/2000/svg"
+                              class="flex-shrink-0"
+                            >
+                              <path
+                                d="M13.3333 4L6 11.3333L2.66667 8"
+                                stroke="currentColor"
+                                stroke-width="1.5"
+                                stroke-linecap="round"
+                                stroke-linejoin="round"></path>
+                            </svg>
+                          </span>
+                          <span>Unlimited participants &amp; questions</span>
+                        </div>
+                      </li>
+                      <li class="text-[13px] tracking-tight">
+                        <div class="flex items-start gap-2">
+                          <span class="text-[#E85D4A] mt-0.5">
+                            <svg
+                              width="16"
+                              height="16"
+                              viewBox="0 0 16 16"
+                              fill="none"
+                              xmlns="http://www.w3.org/2000/svg"
+                              class="flex-shrink-0"
+                            >
+                              <path
+                                d="M13.3333 4L6 11.3333L2.66667 8"
+                                stroke="currentColor"
+                                stroke-width="1.5"
+                                stroke-linecap="round"
+                                stroke-linejoin="round"></path>
+                            </svg>
+                          </span>
+                          <span>File sharing up to 25 MB</span>
+                        </div>
+                      </li>
+                    </ul>
                   </div>
-                  <ul class="mb-6 flex-1 space-y-2">
-                    <li class="text-[13px] tracking-tight">
-                      <div class="flex items-start gap-2">
-                        <span class="text-[#555] mt-0.5">
-                          <svg
-                            width="16"
-                            height="16"
-                            viewBox="0 0 16 16"
-                            fill="none"
-                            xmlns="http://www.w3.org/2000/svg"
-                            class="flex-shrink-0"
-                          >
-                            <path
-                              d="M13.3333 4L6 11.3333L2.66667 8"
-                              stroke="currentColor"
-                              stroke-width="1.5"
-                              stroke-linecap="round"
-                              stroke-linejoin="round"></path>
-                          </svg>
-                        </span>
-                        <span>Everything in Free</span>
+                  <div class="space-y-2 pt-4">
+                    <a
+                      href="https://app.qalive.online"
+                      class="inline-flex items-center justify-center whitespace-nowrap outline-none h-8 gap-1.5 w-full rounded px-4 py-2 text-xs tracking-tight transition-all bg-[#E85D4A] text-white hover:bg-[#E85D4A]/90 hover:scale-105 font-medium"
+                    >
+                      Get Event Pass
+                    </a>
+                  </div>
+                </div>
+
+                <!-- Pro Plan -->
+                <div
+                  class="relative border border-[#E6E6E6] rounded-lg p-6 flex flex-col justify-between transition-all duration-300 hover:scale-[1.02] hover:shadow-xl bg-white"
+                >
+                  <div>
+                    <div class="mb-6">
+                      <div class="mb-4 flex items-center gap-2">
+                        <span
+                          class="text-[16px] leading-[24px] font-medium tracking-[-0.4px] text-[#0A0A0A]"
+                          >Pro</span
+                        >
                       </div>
-                    </li>
-                    <li class="text-[13px] tracking-tight">
-                      <div class="flex items-start gap-2">
-                        <span class="text-[#555] mt-0.5">
-                          <svg
-                            width="16"
-                            height="16"
-                            viewBox="0 0 16 16"
-                            fill="none"
-                            xmlns="http://www.w3.org/2000/svg"
-                            class="flex-shrink-0"
-                          >
-                            <path
-                              d="M13.3333 4L6 11.3333L2.66667 8"
-                              stroke="currentColor"
-                              stroke-width="1.5"
-                              stroke-linecap="round"
-                              stroke-linejoin="round"></path>
-                          </svg>
-                        </span>
-                        <span>Unlimited sessions</span>
+                      <div class="mb-1 flex items-baseline gap-2">
+                        <span
+                          class="text-[26px] leading-[36px] font-medium tracking-[-0.6px] text-[#0A0A0A]"
+                          >$9</span
+                        >
+                        <span
+                          class="text-[13px] leading-[21px] font-normal text-[#555555]"
+                          >/month</span
+                        >
                       </div>
-                    </li>
-                    <li class="text-[13px] tracking-tight">
-                      <div class="flex items-start gap-2">
-                        <span class="text-[#555] mt-0.5">
-                          <svg
-                            width="16"
-                            height="16"
-                            viewBox="0 0 16 16"
-                            fill="none"
-                            xmlns="http://www.w3.org/2000/svg"
-                            class="flex-shrink-0"
-                          >
-                            <path
-                              d="M13.3333 4L6 11.3333L2.66667 8"
-                              stroke="currentColor"
-                              stroke-width="1.5"
-                              stroke-linecap="round"
-                              stroke-linejoin="round"></path>
-                          </svg>
-                        </span>
-                        <span>Unlimited participants</span>
-                      </div>
-                    </li>
-                    <li class="text-[13px] tracking-tight">
-                      <div class="flex items-start gap-2">
-                        <span class="text-[#555] mt-0.5">
-                          <svg
-                            width="16"
-                            height="16"
-                            viewBox="0 0 16 16"
-                            fill="none"
-                            xmlns="http://www.w3.org/2000/svg"
-                            class="flex-shrink-0"
-                          >
-                            <path
-                              d="M13.3333 4L6 11.3333L2.66667 8"
-                              stroke="currentColor"
-                              stroke-width="1.5"
-                              stroke-linecap="round"
-                              stroke-linejoin="round"></path>
-                          </svg>
-                        </span>
-                        <span>Share files during presentation</span>
-                      </div>
-                    </li>
-                    <li class="text-[13px] tracking-tight">
-                      <div class="flex items-start gap-2">
-                        <span class="text-[#555] mt-0.5">
-                          <svg
-                            width="16"
-                            height="16"
-                            viewBox="0 0 16 16"
-                            fill="none"
-                            xmlns="http://www.w3.org/2000/svg"
-                            class="flex-shrink-0"
-                          >
-                            <path
-                              d="M13.3333 4L6 11.3333L2.66667 8"
-                              stroke="currentColor"
-                              stroke-width="1.5"
-                              stroke-linecap="round"
-                              stroke-linejoin="round"></path>
-                          </svg>
-                        </span>
-                        <span>Custom Branding options</span>
-                      </div>
-                    </li>
-                    <li class="text-[13px] tracking-tight">
-                      <div class="flex items-start gap-2">
-                        <span class="text-[#555] mt-0.5">
-                          <svg
-                            width="16"
-                            height="16"
-                            viewBox="0 0 16 16"
-                            fill="none"
-                            xmlns="http://www.w3.org/2000/svg"
-                            class="flex-shrink-0"
-                          >
-                            <path
-                              d="M13.3333 4L6 11.3333L2.66667 8"
-                              stroke="currentColor"
-                              stroke-width="1.5"
-                              stroke-linecap="round"
-                              stroke-linejoin="round"></path>
-                          </svg>
-                        </span>
-                        <span>Priority Support</span>
-                      </div>
-                    </li>
-                  </ul>
-                  <div class="space-y-2">
+                      <p class="text-[11px] text-[#777]">
+                        Renews monthly, cancel anytime
+                      </p>
+                    </div>
+                    <ul class="mb-6 space-y-2">
+                      <li class="text-[13px] tracking-tight">
+                        <div class="flex items-start gap-2">
+                          <span class="text-[#555] mt-0.5">
+                            <svg
+                              width="16"
+                              height="16"
+                              viewBox="0 0 16 16"
+                              fill="none"
+                              xmlns="http://www.w3.org/2000/svg"
+                              class="flex-shrink-0"
+                            >
+                              <path
+                                d="M13.3333 4L6 11.3333L2.66667 8"
+                                stroke="currentColor"
+                                stroke-width="1.5"
+                                stroke-linecap="round"
+                                stroke-linejoin="round"></path>
+                            </svg>
+                          </span>
+                          <span>Everything in Event Pass</span>
+                        </div>
+                      </li>
+                      <li class="text-[13px] tracking-tight">
+                        <div class="flex items-start gap-2">
+                          <span class="text-[#555] mt-0.5">
+                            <svg
+                              width="16"
+                              height="16"
+                              viewBox="0 0 16 16"
+                              fill="none"
+                              xmlns="http://www.w3.org/2000/svg"
+                              class="flex-shrink-0"
+                            >
+                              <path
+                                d="M13.3333 4L6 11.3333L2.66667 8"
+                                stroke="currentColor"
+                                stroke-width="1.5"
+                                stroke-linecap="round"
+                                stroke-linejoin="round"></path>
+                            </svg>
+                          </span>
+                          <span>Continuous monthly renewal</span>
+                        </div>
+                      </li>
+                      <li class="text-[13px] tracking-tight">
+                        <div class="flex items-start gap-2">
+                          <span class="text-[#555] mt-0.5">
+                            <svg
+                              width="16"
+                              height="16"
+                              viewBox="0 0 16 16"
+                              fill="none"
+                              xmlns="http://www.w3.org/2000/svg"
+                              class="flex-shrink-0"
+                            >
+                              <path
+                                d="M13.3333 4L6 11.3333L2.66667 8"
+                                stroke="currentColor"
+                                stroke-width="1.5"
+                                stroke-linecap="round"
+                                stroke-linejoin="round"></path>
+                            </svg>
+                          </span>
+                          <span>Unlimited participants &amp; questions</span>
+                        </div>
+                      </li>
+                      <li class="text-[13px] tracking-tight">
+                        <div class="flex items-start gap-2">
+                          <span class="text-[#555] mt-0.5">
+                            <svg
+                              width="16"
+                              height="16"
+                              viewBox="0 0 16 16"
+                              fill="none"
+                              xmlns="http://www.w3.org/2000/svg"
+                              class="flex-shrink-0"
+                            >
+                              <path
+                                d="M13.3333 4L6 11.3333L2.66667 8"
+                                stroke="currentColor"
+                                stroke-width="1.5"
+                                stroke-linecap="round"
+                                stroke-linejoin="round"></path>
+                            </svg>
+                          </span>
+                          <span>File sharing up to 25 MB</span>
+                        </div>
+                      </li>
+                      <li class="text-[13px] tracking-tight">
+                        <div class="flex items-start gap-2">
+                          <span class="text-[#555] mt-0.5">
+                            <svg
+                              width="16"
+                              height="16"
+                              viewBox="0 0 16 16"
+                              fill="none"
+                              xmlns="http://www.w3.org/2000/svg"
+                              class="flex-shrink-0"
+                            >
+                              <path
+                                d="M13.3333 4L6 11.3333L2.66667 8"
+                                stroke="currentColor"
+                                stroke-width="1.5"
+                                stroke-linecap="round"
+                                stroke-linejoin="round"></path>
+                            </svg>
+                          </span>
+                          <span>Custom Branding options</span>
+                        </div>
+                      </li>
+                      <li class="text-[13px] tracking-tight">
+                        <div class="flex items-start gap-2">
+                          <span class="text-[#555] mt-0.5">
+                            <svg
+                              width="16"
+                              height="16"
+                              viewBox="0 0 16 16"
+                              fill="none"
+                              xmlns="http://www.w3.org/2000/svg"
+                              class="flex-shrink-0"
+                            >
+                              <path
+                                d="M13.3333 4L6 11.3333L2.66667 8"
+                                stroke="currentColor"
+                                stroke-width="1.5"
+                                stroke-linecap="round"
+                                stroke-linejoin="round"></path>
+                            </svg>
+                          </span>
+                          <span>Priority Support</span>
+                        </div>
+                      </li>
+                    </ul>
+                  </div>
+                  <div class="space-y-2 pt-4">
                     <a
                       href="https://app.qalive.online"
                       class="inline-flex items-center justify-center whitespace-nowrap outline-none h-8 gap-1.5 w-full rounded px-4 py-2 text-xs tracking-tight transition-all bg-[#0A0A0A] text-white hover:bg-[#0A0A0A]/90 hover:scale-105"
                     >
-                      Get Started
+                      Upgrade to Pro
                     </a>
                   </div>
                 </div>
@@ -808,11 +982,7 @@ const faqSchema = {
                   >
                   <a
                     class="text-[13px] text-[#555] tracking-tight hover:text-[#0A0A0A] transition-colors whitespace-nowrap"
-                    href="/blog">Blog</a
-                  >
-                  <a
-                    class="text-[13px] text-[#555] tracking-tight hover:text-[#0A0A0A] transition-colors whitespace-nowrap"
-                    href="/changelog">Changelog</a
+                    href="https://blog.qalive.online">Blog</a
                   >
                   <a
                     target="_blank"
@@ -841,7 +1011,8 @@ const faqSchema = {
             class="border-t border-[#E6E6E6] pt-6 flex flex-col md:flex-row md:items-center md:justify-between gap-4"
           >
             <p class="text-[11px] text-[#737373] tracking-tight">
-              © {new Date().getFullYear()} QAlive · qalive.online. Built with ❤️ for better events.
+              © {new Date().getFullYear()} QAlive · qalive.online. Built with ❤️ for
+              better events.
             </p>
             <div class="flex items-center gap-4">
               <a

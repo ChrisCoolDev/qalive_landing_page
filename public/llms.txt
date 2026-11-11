@@ -10,7 +10,7 @@
 
 ## Key facts
 
-- Pricing: Starter $0/month (3 active sessions/month, up to 50 participants, real-time Q&A, QR code generation, basic moderation). Pro $7.99/month (unlimited sessions and participants, file sharing during presentations, custom branding, priority support).
+- Pricing: Free $0 (1 test session, 1 hour, public sessions, up to 15 participants and 15 questions, file sharing up to 5 MB). Event Pass $9 one-time (valid 7 days, unlimited sessions and questions, schedule upcoming sessions, private access code, file sharing up to 25 MB). Pro $9/month (everything in Event Pass renewed monthly, custom branding, priority support).
 - Attendees do not need an account, an email address or an app.
 - Hosts can moderate questions before they appear on screen.
 - Use cases: conferences, panels, workshops, classrooms, webinars, company all-hands, town halls.

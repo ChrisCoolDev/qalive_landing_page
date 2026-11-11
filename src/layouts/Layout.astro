@@ -102,15 +102,22 @@ const jsonLd = {
       offers: [
         {
           "@type": "Offer",
-          name: "Starter",
+          name: "Free",
           price: "0",
           priceCurrency: "USD",
           availability: "https://schema.org/InStock",
         },
         {
           "@type": "Offer",
+          name: "Event Pass",
+          price: "9.00",
+          priceCurrency: "USD",
+          availability: "https://schema.org/InStock",
+        },
+        {
+          "@type": "Offer",
           name: "Pro",
-          price: "12.99",
+          price: "9.00",
           priceCurrency: "USD",
           availability: "https://schema.org/InStock",
         },
@@ -121,6 +128,8 @@ const jsonLd = {
         "Moderation Dashboard",
         "Anonymous Submissions",
         "No signup for attendees",
+        "Private sessions with access code",
+        "File sharing up to 25 MB",
       ],
       author,
       publisher: { "@id": `${siteUrl}/#organization` },
