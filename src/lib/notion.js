@@ -142,44 +142,7 @@ function stripMarkdown(md = '') {
 }
 
 function getFallbackPosts(lang = 'EN') {
-  return [
-    {
-      id: 'sample-1',
-      title: 'Why we built QAlive for live events and conferences',
-      slug: 'why-we-built-qalive',
-      language: 'EN',
-      date: '2026-11-04',
-      excerpt: 'Discover how QAlive gives every attendee a voice during conferences, panels, and workshops via a simple QR code—with zero app downloads or sign-ups.',
-      cover: null,
-      tag: 'Product',
-      author: 'Christian Ludovic',
-      readingTime: '3 min read',
-    },
-    {
-      id: 'sample-2',
-      title: '5 simple ways to increase attendee engagement during presentations',
-      slug: '5-ways-to-increase-attendee-engagement',
-      language: 'EN',
-      date: '2026-11-08',
-      excerpt: 'Turn passive listeners into active participants with real-time upvoting, anonymous questions, and clear moderation.',
-      cover: null,
-      tag: 'Guides',
-      author: 'Christian Ludovic',
-      readingTime: '4 min read',
-    },
-    {
-      id: 'sample-3',
-      title: 'Introducing Event Pass: Flexible Q&A for one-off summits and panels',
-      slug: 'introducing-event-pass-pricing',
-      language: 'EN',
-      date: '2026-11-10',
-      excerpt: 'Organizing a single summit or panel? The new $9 Event Pass gives you 7 days of unlimited sessions with zero recurring commitment.',
-      cover: null,
-      tag: 'Announcements',
-      author: 'Christian Ludovic',
-      readingTime: '2 min read',
-    },
-  ];
+  return [];
 }
 
 /**
